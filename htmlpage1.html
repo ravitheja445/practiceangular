@@ -2,11 +2,19 @@
 <html ng-app="myModule">
     <head>
       <script src="angular.js"></script>
-      <script src="script.js"></script>
+      <script src="databinding.js"></script>
     </head>
     <body >
       <div ng-controller="myController">
-        {{ message }}
+        <div>
+          First Name: {{ employee.firstname}}
+        </div>
+        <div>
+          Last Name: {{employee.lastname}}
+        </div>
+        <div>
+          Gender: {{employee.gender}}
+        </div>
       </div>
     </body>
 
