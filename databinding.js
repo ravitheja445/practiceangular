@@ -1,10 +1,10 @@
 var myApp = angular.module("myModule",[]);
 
 myApp.controller("myController", function ($scope) {
- var employee = {
-   firstName: "Ravitheja",
-   lastName: "Reddy",
-   gender: "Male"
+ var flower = {
+   name: "Rose",
+   color: "watery",
+   image: "images/flower.png"
  };
- $scope.employee = employee;
+ $scope.flower = flower;
 });

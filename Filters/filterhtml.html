@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  <script src="filter.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body ng-app= "myModule">
+  <div ng-controller="myController">
+    Rows to Display<input type="number" step="1" min="0" max="5" ng-model="rowlimit" />
+    <br /><br />
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Salary (number)</th>
+        <th>Salary (currency)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="employee in employees | limitTo:rowlimit" >
+        <td>{{ employee.name | uppercase }}</td>
+        <td>{{ employee.dateOfBirth | date:"dd-MM-yy" }}</td>
+        <td>{{ employee.gender | lowercase }}</td>
+        <td>{{ employee.salary | number:1 }}</td>
+        <td>{{ employee.salary | currency:"£":1 }}</td>
+      </tr>
+    </tbody>
+  </table>
+</html>
